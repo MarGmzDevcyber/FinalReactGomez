@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1;100;700;1000&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Ysabeau SC', sans-serif;
+}
+body{
+        background-color: lightgray;
+}
+header{
+        width:100%;
+        height: 60px;
+        background-color:rgba(0, 0, 0, 1); 
+        display:flex;
+}
+
+header .containerBrand{
+        width: 15%;
+        min-width:200px;
+        height:100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+}
+header .containerBrand img{
+        transform: scale(0.3);
+
+}
+
+header .navList{
+        width:80%;
+        height:100%;
+        display:flex;
+        align-items:center;
+        justify-content: flex-end;
+        font-weight: bold;
+}
+
+header .navList ul{
+        list-style:none;
+        display:flex;
+        margin:0;
+        justify-content:flex-end;
+        align-items: center;
+}
+
+header .navList ul li{
+        text-decoration: none;
+}
+header .navList ul li{
+        margin:6px;
+        background-color: rgb(17, 71, 82);
+        border-radius:6px;
+        -webkit-border-radius:6px;
+        -moz-border-radius:6px;
+        -ms-border-radius:6px;
+        -o-border-radius:6px;
+}
+
+header .containerCart{
+        width: 20%;
+        height:100%;
+        display: flex;
+        justify-content: flex-end;
+}
+header .cCart{
+        width: 50%;
+        height:100%;
+        display:flex;
+        justify-content: flex-end;
+        position:relative;
+}
+header .cantCart{
+        position:absolute;
+        top:0;
+        right:0;
+        background-color:rgb(17, 71, 82);
+        color:rgb(149, 232, 255);
+        width:25px;
+        height:25px;
+        border-radius:50%;
+        text-align:center;
+        font-size:16px;
+        font-weight:bold;
+}
