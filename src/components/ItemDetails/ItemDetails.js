@@ -1,53 +1,56 @@
+import React, { useState, useEffect } from 'react';
 import Image from "./Image";
-import Description from "../components item/Description";
-import "../styles/DetailsItem.css";
-import DetailButton from "../components item/DetailButton";
-import fetchSimulation from "../../resources/fetchSimulation";
-import products from "../../resources/products";
+import Description from "./Description";
+import "../../styles/detailsItem.css";
+import ButtonDetalles from "./Buttondetalles";
+import fetchSimultion from "../../utils/fetchSimulation";
+import productos from "../../utils/products";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-
 
 const DetailsItem = () => {
-        const [ datos, setDatos ] = useState([]);
-        const { idItem } = useParams();
-        
-        useEffect(() => {
+    const [datos, setDatos ] = useState([]);
+    const { idItem } = useParams();
+    
+    useEffect(() => {
 
-            setDatos([])
+        setDatos([])
 
-            fetchSimulation(products.filter( flt => flt.id == idItem), 2000)
-            .then(resp => setDatos(resp))
-            .catch(error => console.log(error))
-        }, [idItem])
-        
+        fetchSimultion(productos.filter(flt => flt.id == idItem), 2000)
+        .then(resp => setDatos(resp))
+        .catch(error => console.log(error))
+    }, [idItem])
+    
     return(
-        <div className="detailsItem">{
-                    datos.map( items=>(
-                            <>
-                                        <div className="containerLe">
-                                                    <Image imagen= {datos[0].imageProduct}/>
-                                        </div>
-                                        <div className="containerRi">
-                                                <Description 
-                                                        name={datos[0].name}
-                                                        description={datos[0].description}
-                                                        stock={datos[0].stock}
-                                                        price={datos[0].price} 
-                                                />
-                                                <div className="buttons">
-                                                        <addButton
-                                                                cant={5}
-                                                        />
-                                                        <DetailButton 
-                                                                txt="Agregar al carrito"
-                                                        />
-                                                </div>
-                                        </div>
-                            </>
-            ),
-)} </div>
+        <div className="detailsItem">
+            {
+                (datos.length === 0) ? <div>Cargando...</div> 
+                : datos.map(items => (
+                    <div key={items.id}>
+                        <div className="containerLeft">
+                            <Image 
+                                imagen={items.imageProduct.firtsImage}
+                            />
+                        </div>  
+
+                        <div className="containerRigth">
+                            <Description 
+                                title={items.title}
+                                parrafo={items.description}
+                                cantidad={items.stock}
+                                precio={items.price}
+                            />
+                            
+                            <div className="buttons">
+                                <ButtonDetalles 
+                                    txt="Agregar al carrito"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
     )
-}        
+}
 
 export default DetailsItem;
