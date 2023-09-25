@@ -1,7 +1,7 @@
 const Image = (props) => {
         return(
                 <div className="cardImg">
-                        <img src={props.Imagen} alt="cardimg"></img>
+                        <img src={props.Image} alt="cardimg"></img>
                 </div>
         )
 }

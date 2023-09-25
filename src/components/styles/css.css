@@ -1,11 +1,15 @@
 *{
     margin:0;
     padding:0;
-    box-sizing:border-box;
-
 }
 
-.cardItems{
+#cardss {
+        display:block;
+        justify-content: space-between;
+
+}
+.cardItemss{
+        border:solid 1px red;
         background-color: rgb(24, 132, 162);
         height: 480px;
         width:300px;
@@ -17,14 +21,14 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2) ;
 }
 
-.cardItems .cardImg{
+.cardItemss .cardImg{
         background-color: rgb(215, 213, 213);
         display:flex;
         justify-content:center;
         height:50%;
 }
 
-.cardItems .cardImg img{
+.cardItemss .cardImg img{
         width:100%;
 }
 
@@ -38,7 +42,7 @@
 
 .cardDescription{
         display: flex;
-        flex-direction:column;
+        flex-direction:column; 
         text-align: center;
         height:50%;
         width:100%;
@@ -100,4 +104,6 @@
 }
 .buttons #addCart:hover{
         background-color: rgb(18, 99, 121);
-}
+} 
+
+

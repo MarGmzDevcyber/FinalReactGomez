@@ -1,56 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import Image from "./Image";
+import Image from "../img/im10.png";
 import Description from "./Description";
-import "../../styles/detailsItem.css";
-import ButtonDetalles from "./Buttondetalles";
-import fetchSimultion from "../../utils/fetchSimulation";
-import productos from "../../utils/products";
+import DetailsButton from "./DetailsButton";
+import fetchSimulation from "../assets/fetchSimulation";
+import products from "../assets/products";
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-const DetailsItem = () => {
-    const [datos, setDatos ] = useState([]);
+const ItemDetails = () => {
+    const [ datos, setDatos ] = useState([]);
     const { idItem } = useParams();
     
     useEffect(() => {
 
-        setDatos([])
-
-        fetchSimultion(productos.filter(flt => flt.id == idItem), 2000)
+        setDatos([]);
+        
+        fetchSimulation(products.filter(flt => flt.id === idItem), 2000)
         .then(resp => setDatos(resp))
-        .catch(error => console.log(error))
-    }, [idItem])
-    
-    return(
+        .catch(error => console.log(error));
+    }, [idItem] ) 
+
+    return (
         <div className="detailsItem">
-            {
-                (datos.length === 0) ? <div>Cargando...</div> 
-                : datos.map(items => (
-                    <div key={items.id}>
-                        <div className="containerLeft">
-                            <Image 
-                                imagen={items.imageProduct.firtsImage}
-                            />
-                        </div>  
-
-                        <div className="containerRigth">
-                            <Description 
-                                title={items.title}
-                                parrafo={items.description}
-                                cantidad={items.stock}
-                                precio={items.price}
-                            />
-                            
-                            <div className="buttons">
-                                <ButtonDetalles 
-                                    txt="Agregar al carrito"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                ))
-            }
+          {datos.map((items) => (
+            <>
+              <div className="containerLeft">
+                <Image imagen={items.image} />
+              </div>
+      
+              <div className="containerRigth">
+                <Description
+                  name={items.name}
+                  description={items.description}
+                  stock={items.stock}
+                  price={items.price}
+                />
+      
+                <div className="buttons">
+                  <DetailsButton txt="Agregar al carrito" />
+                </div>
+              </div>
+            </>
+          ))}
         </div>
-    )
+      );
+      
+      
 }
-
-export default DetailsItem;
+                        
+export default ItemDetails;

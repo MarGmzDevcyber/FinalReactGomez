@@ -1,26 +1,35 @@
 import Brand from '../Brand/Brand'
-import CartWidget from '../CartWidget/CartWidget'
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import CartWidget from '../CartWidget/CartWidget'
+// import CartContainer from './CartContainer';
+// import CartContext from './CartContext';
 
 const NavBar= ( ) => {
+
+
         return (
+                // <CartContext>
                 <header>
                         <div className="containerBrand">
                                 <Brand/>
                         </div>
+
                         <nav className="navList">
                                 <ItemListContainer 
-                                        itemUno="Procesador"
-                                        itemDos="Perifericos"
-                                        itemTres="Accesorios"
+                                        itemUno="Monitores"
+                                        itemDos="Componentes"
+                                        itemTres="Perifericos"
                                 />
                         </nav>
-                        <div className="containerCart">
+
+                        <div className="cartContainer">
                                 <CartWidget />
                         </div>
-                </header>
-        )
 
+                        {/* <CartContainer /> */}
+                </header>
+                // </CartContext>
+        )
 }
 
-export default NavBar 
+export default NavBar;

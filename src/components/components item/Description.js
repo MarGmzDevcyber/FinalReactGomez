@@ -5,7 +5,7 @@ const Description = (props ) => {
                                 {props.name}
                         </h3>
                         <span className="cant">
-                               En stock: {props.stock}
+                               En stock: {props.stock} unidades
                         </span>
 
                         <span className="price">

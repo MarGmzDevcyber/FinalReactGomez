@@ -1,20 +1,22 @@
-import  {Link}  from 'react-router-dom'
+import   {Link}  from 'react-router-dom'
+
+
 const ItemListContainer = (props) =>{
 
         return(
                 <ul>
                          <li> 
-                                <Link to="category/procesador">
+                                <Link to="category/monitores">
                                         {props.itemUno}                
                                 </Link>
                         </li>
                         <li> 
-                                <Link to="category/perifericos">
+                                <Link to="category/componentes">
                                         {props.itemDos}                
                                 </Link>
                         </li>
                         <li> 
-                                <Link to="category/accesorios">
+                                <Link to="category/aperifericos">
                                         {props.itemTres}                
                                 </Link>
                         </li>

@@ -7,7 +7,7 @@ const  products = [
             name:"Monitor Samsung",
             description:"",
             stock:"140",
-            category:"procesador",
+            category:"monitores",
             image: kda,
             price:350000,
         },
@@ -16,7 +16,7 @@ const  products = [
             name:"Mouse Logitech",
             description:"",
             stock:25,
-            category: "perifericos",
+            category: "monitores",
             image: "",
             price:60000,
         },
@@ -25,7 +25,7 @@ const  products = [
             name:"Gabinete Redragon",
             description:"",
             stock:45,
-            category: "componentes",
+            category: "monitores",
             image: "",
             price:230000,
         },
@@ -34,7 +34,7 @@ const  products = [
             name:"Teclado Logitech Aurora",
             description:"",
             stock:55,
-            category: "accesorios",
+            category: "perifericos",
             image: "",
             price:280000,
         },
@@ -43,7 +43,7 @@ const  products = [
             name:"Mouse Logitech Pop",
             description:"",
             stock:70,
-            category: "accesorios",
+            category: "perifericos",
             image: "",
             price:120000,
         },
@@ -52,7 +52,7 @@ const  products = [
             name:"Auriculares Logitech G733 KD/A",
             description:"",
             stock:85,
-            category: "accesorios",
+            category: "perifericos",
             image: "",
             price:240000,
         },
@@ -70,7 +70,7 @@ const  products = [
             name:"Auriculares Kraken Razer",
             description:"",
             stock:65,
-            category: "perifericos",
+            category: "componentes",
             image: "",
             price:30000,
         },
@@ -79,7 +79,7 @@ const  products = [
             name:"Auriculares Kraken Razer",
             description:"",
             stock:65,
-            category: "perifericos",
+            category: "componentes",
             image: "",
             price:30000,
         },
@@ -88,34 +88,11 @@ const  products = [
             name:"Auriculares Kraken Razer",
             description:"",
             stock:65,
-            category: "procesador",
+            category: "componentes",
             image: "",
             price:30000,
         },
-        {
-            id:11,
-            name:"Auriculares Kraken Razer",
-            description:"",
-            stock:65,
-            category: "procesador",
-            image: "",
-            price:30000,
-        }
+
 ]
 
-export const getProducts = ( ) => {
-        return new Promise (( resolve) =>{
-                setTimeout(() => {
-                        resolve(products)
-                },500)
-        })
-}
-
-export const getProductById =(productId) =>{
-        return new Promise ((resolve) =>{
-                setTimeout(() => {
-                        resolve(products.find(prod => prod.id === productId))
-                },500)
-        })
-}
-export default products
+export default products;
