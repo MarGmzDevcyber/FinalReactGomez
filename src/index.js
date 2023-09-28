@@ -1,11 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { createRoot } from 'react-dom/client'; 
 import App from './App';
+import {CartProvider} from './components/Header/CartContext';
 
+const ds = document.getElementById("root");
+const root = createRoot(ds);
 
-const ds = document.getElementById("root")
-const root = ReactDOM.createRoot(ds)
-
-
-root.render(<App />);
-
+root.render(
+    <CartProvider>
+          <App />
+    </CartProvider>
+);

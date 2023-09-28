@@ -18,21 +18,21 @@ const CheckoutForm = ({ onConfirm }) => {
         <div className='Container'>
             <form onSubmit={handleConfirm} className='Form'>
                 <label className='Label'>
-                    Nombre:
+                <h1>Nombre:</h1>
                     <input className='Input'
                         type='text'
                         value={namecheck}
                         onChange={({ target }) => setNamecheck(target.value)} />
                 </label>
                 <label className='Label'>
-                    Telefono:
+                <h1>Telefono:</h1>
                     <input className='Input'
                         type="text"
                         value={phone}
                         onChange={({ target }) => setPhone(target.value)} />
                 </label>
                 <label className='Label'>
-                    Correo:
+                <h1>Email:</h1>
                     <input className='Input'
                         type="email-cont"
                         value={email}

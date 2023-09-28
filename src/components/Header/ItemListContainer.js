@@ -7,7 +7,7 @@ import { db } from '../services/firebase/firebaseConfig';
 import { RingLoader } from 'react-spinners';
 
 const ItemListContainer = ({ greeting }) => {
-  const [productos, setProductos] = useState([]);
+  const [Products, setProducts] = useState([]);
   const [loader, setLoader] = useState(true);
   const { categoryId } = useParams();
 
@@ -15,17 +15,17 @@ const ItemListContainer = ({ greeting }) => {
     setLoader(true);
 
     const collectionRef = categoryId
-      ? query(collection(db, 'products'), where('category', '==', categoryId))
-      : collection(db, 'products');
+      ? query(collection(db, 'Products'), where('category', '==', categoryId))
+      : collection(db, 'Products');
 
     getDocs(collectionRef)
       .then(response => {
-        const productosAdapted = response.docs.map(doc => {
+        const ProductsAdapted = response.docs.map(doc => {
           const data = doc.data();
           return { id: doc.id, ...data };
         });
 
-        setProductos(productosAdapted);
+        setProducts(ProductsAdapted);
       })
       .catch(error => {
         console.log(error);
@@ -41,7 +41,7 @@ const ItemListContainer = ({ greeting }) => {
       {loader ? (
         <RingLoader color='#36D7B7' loading={true} size={150} />
       ) : (
-        <ItemList products={productos} />
+        <ItemList Products={Products} />
       )}
     </div>
   );

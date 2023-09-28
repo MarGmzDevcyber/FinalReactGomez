@@ -1,0 +1,53 @@
+h1 {
+    /* color: #0e0253; */
+    font-size: 2.8rem;
+    font-weight: bolder;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.Form {
+    padding: 50px 0;
+}
+
+.Container.Form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.Container.Form .Label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 46%; */
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.Container .Form .Label .Input {
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+    padding: px 30px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    font-size: 1rem;
+    color: darkslategrey;
+    transition: all 0.6s ease;
+}
+
+.Container .Form .Label .Input:focus{
+    border-bottom: 2px solid #2abccc;
+}
+
+.Generator-button{
+    font-size: 20px;
+    font-weight: 500;
+    border: solid 1px #2abccc;
+    border-radius: 40px;
+    width: 100%;
+    color: #2abccc;
+    background-color: white;
+    padding: 10px;
+}

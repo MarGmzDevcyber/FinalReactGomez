@@ -1,0 +1,67 @@
+#Evol{
+        display: flex;
+        justify-content: space-between;
+}
+
+.CardItem {
+    height: 460px;
+    width: 290px;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CardItem .HeaderItem{
+    width: 90%;
+    height:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CardItem .HeaderItem .ItemImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+}
+
+.CardItem .Title {
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.CardItem .info-item{
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-weight: 600;
+    padding: 10px;
+}
+
+
+.CardItem .price-item{
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    color: #46dff0;
+}
+
+.Item-footer .OptionDetails button {
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    padding: 10px;
+    border: none;
+    border: solid 1px #2abccc;
+    background-color: #2abccc;
+    color: #cfe6e9;
+    font-weight: 400;
+}

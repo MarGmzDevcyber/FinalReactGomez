@@ -1,15 +1,15 @@
 import React from 'react'
 import { useContext } from 'react'
-import  CartContext  from '../Body/CartContext'
-import  ItemCart  from './ItemCart'
+import { CartContext } from './CartContext'
+import ItemCart  from './ItemCart'
 import { Link } from 'react-router-dom'
 import '../styles/Cart.css'
 
- const Cart = () => {
+export const Cart = () => {
 
     const { cart, clearCart, totalQuantity} = useContext(CartContext)
     
-
+    // condicion para cuando no hayan productos en el carrito 
     if (totalQuantity === 0) {
         return (
             <div>
@@ -22,18 +22,17 @@ import '../styles/Cart.css'
     }
 
     return (
-        <div className='Cart-products'>
-            {cart.map(prod => <ItemCart key={prod.id} {...prod} />)}
-            <div className='bttn-container'>
-                <div className='vaciar-carrito'>
-                <button onClick={() => clearCart()} className='clear'>Vaciar carrito :C</button>
+        <div className='CartVew'>
+            {cart.map(produc => <ItemCart key={produc.id} {...produc} />)}
+            <div className='contenedorBotones'>
+                <div className='LimpiarCarrito'>
+                <button onClick={() => clearCart()} className='CartFooter'>Limpiar carrito</button>
                 </div>
-                <div className='check-bttn'>
-                <Link className='Check-out' to='/checkout'>Checkout</Link>
+                <div className='BotonChek'>
+                <Link className='Check' to='/checkout'>Checkout</Link>
                 </div>
             </div>
         </div>
     )
 
 }
-export default Cart

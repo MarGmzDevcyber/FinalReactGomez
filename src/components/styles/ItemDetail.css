@@ -1,0 +1,72 @@
+.DetailContainer{
+    width: 80%;
+    height: 500px;
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0, 0.4);
+}
+
+.DetailContainer .ImgContainer{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+}
+.DetailContainer .DetailImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+.DetailContainer .headerDescrip{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DetailContainer .Body-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.DetailContainer .Info-cont{
+   font-weight: 700;
+   display: flex;
+}
+
+.DetailContainer .Descrip-cont{
+    font-size: larger;
+}
+.DetailContainer .Price-cont{
+    font-size: large;
+    font-weight: 900;
+    color: #2abccc;
+}
+
+.DetailContainer .ItemDispo{
+    font-size: larger;
+    font-weight: 500;
+}
+
+.End-bttn{
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 40px;
+    padding: 10px;
+    border: none;
+    border: solid 1px #2abccc;
+    background-color: none;
+    color: #2abccc;
+    font-weight: 600;
+    text-decoration: none;
+}

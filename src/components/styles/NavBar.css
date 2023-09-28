@@ -1,0 +1,66 @@
+*{
+  margin:0;
+  padding:0;
+}
+.navbar {
+  width: 100%;
+  height:30%;
+  background-color: #333; 
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+
+.brandcontainer {
+  flex: 1;
+}
+
+.brand-page {
+  text-decoration: none; 
+  color: #fff;
+}
+
+.brand-img {
+  max-width: 100px; 
+  height: auto;
+}
+
+
+.Categories {
+  display: flex;
+  align-items: center;
+}
+
+.sub-Category {
+  display: flex;
+  margin-right: 10px;
+}
+
+.itemList {
+  text-decoration: none; 
+  color: #fff; 
+  font-size: 18px; 
+  font-weight: bold; 
+  margin-right: 10px; 
+  transition: color 0.3s;
+}
+
+.itemList:hover {
+  color: #36D7B7;
+}
+
+
+.Cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:10%;
+  height:100%;
+  min-width:72px;
+}
+
+.Cart-img{
+  width: 40%;
+}

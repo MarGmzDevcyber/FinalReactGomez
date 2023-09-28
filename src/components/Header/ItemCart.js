@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { CartContext } from '../Body/CartContext'
+import {CartProvider} from './CartContext'
 import '../styles/ItemCart.css'
 
 
  const ItemCart = ({ id, name, image, price, quantity }) => {
 
-  const { removeItem, total } = useContext(CartContext)
+  const { removeItem, total } = useContext(CartProvider)
 
   return (
 

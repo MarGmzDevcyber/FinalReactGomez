@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { collection, getDocs, query, where, Timestamp, writeBatch, addDoc, documentId } from 'firebase/firestore'
 import { db } from '../services/firebase/firebaseConfig'
-import { CartContext } from './CartContext'
+import  {CartProvider}  from '../Header/CartContext'
 import  CheckoutForm  from './CheckoutForm'
 import Swal from 'sweetalert2'
 // import { Link } from 'react-router-dom'
@@ -12,7 +12,7 @@ const Checkout = () => {
     const [loader, setLoader] = useState(false)
     const [idOrder, setIdOrder] = useState('')
 
-    const { cart, total, clearCart } = useContext(CartContext)
+    const { cart, total, clearCart } = useContext(CartProvider)
 
     const createOrder = async ({ name, phone, email}) => {
 
@@ -34,9 +34,9 @@ const Checkout = () => {
 
             const ids = cart.map(prod => prod.id)
 
-            const productsRef = collection(db, 'products')
-            const productAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
-            const { docs } = productAddedFromFirestore
+            const ProductsRef = collection(db, 'products')
+            const ProductsAddedFromFirestore = await getDocs(query(ProductsRef, where(documentId(), 'in', ids)))
+            const { docs } = ProductsAddedFromFirestore
 
             docs.forEach(doc => {
                 const dataDoc = doc.data()

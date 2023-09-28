@@ -7,20 +7,20 @@ import { db } from '../services/firebase/firebaseConfig';
 import { RingLoader } from 'react-spinners'; 
 
 const ItemDetailContainer = () => {
-  const [produc, setProductos] = useState(null);
+  const [Products, setProducts] = useState(null);
   const [loader, setLoader] = useState(true);
   const { itemId } = useParams();
 
   useEffect(() => {
     setLoader(true);
 
-    const docRef = doc(db, 'products', itemId);
+    const docRef = doc(db, 'Products', itemId);
 
     getDoc(docRef)
       .then(response => {
         const data = response.data();
-        const producAdapted = { id: response.id, ...data };
-        setProductos(producAdapted);
+        const ProductsAdapted = { id: response.id, ...data };
+        setProducts(ProductsAdapted);
       })
       .catch(error => {
         console.log(error);
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
       {loader ? (
         <RingLoader color='#36D7B7' loading={true} size={150} /> 
       ) : (
-        <ItemDetail {...produc} />
+        <ItemDetail {...Products} />
       )}
     </div>
   );
