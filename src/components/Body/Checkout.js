@@ -1,29 +1,34 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { collection, getDocs, query, where, Timestamp, writeBatch, addDoc, documentId } from 'firebase/firestore'
-import { db } from '../services/firebase/firebaseConfig'
-import  {CartProvider}  from '../Header/CartContext'
-import  CheckoutForm  from './CheckoutForm'
-import Swal from 'sweetalert2'
-// import { Link } from 'react-router-dom'
-
-
+import React, { useContext, useState, useEffect } from 'react';
+import { collection, getDocs, query, where, Timestamp, writeBatch, addDoc, documentId } from 'firebase/firestore';
+import { db } from '../services/firebase/firebaseConfig';
+import CartProvider from '../Header/ProviderCart';
+import CheckoutForm from './CheckoutForm';
+import Swal from 'sweetalert2';
 
 const Checkout = () => {
-    const [loader, setLoader] = useState(false)
-    const [idOrder, setIdOrder] = useState('')
+    return (
+        <CartProvider>
+            <CheckoutContent />
+        </CartProvider>
+    );
+}
 
-    const { cart, total, clearCart } = useContext(CartProvider)
 
-    const createOrder = async ({ name, phone, email}) => {
 
-        setLoader(true)
+const CheckoutContent = () => {
+    const  {Cart, total, clearCart}  = useContext(CartProvider);
+    const [loader, setLoader] = useState(false);
+    const [idOrder, setIdOrder] = useState('');
+
+    const createOrder = async ({ name, phone, email }) => {
+        setLoader(true);
 
         try {
             const objOrder = {
                 comprador: {
                     name, phone, email
                 },
-                items: cart,
+                items: Cart,
                 total: total,
                 date: Timestamp.fromDate(new Date())
             }
@@ -32,7 +37,7 @@ const Checkout = () => {
 
             const outOfStock = []
 
-            const ids = cart.map(prod => prod.id)
+            const ids = Cart.map(prod => prod.id)
 
             const ProductsRef = collection(db, 'products')
             const ProductsAddedFromFirestore = await getDocs(query(ProductsRef, where(documentId(), 'in', ids)))
@@ -42,7 +47,7 @@ const Checkout = () => {
                 const dataDoc = doc.data()
                 const stockDb = dataDoc.stock
 
-                const productAddedToCart = cart.find(prod => prod.id === doc.id)
+                const productAddedToCart = Cart.find(prod => prod.id === doc.id)
                 const prodQuantity = productAddedToCart?.quantity
 
                 if (stockDb >= prodQuantity) {
@@ -75,8 +80,8 @@ const Checkout = () => {
 
     const redirectToIndex = () => {
         window.location.href = '/';
-
     }
+
     useEffect(() => {
         if (!loader && idOrder) {
             Swal.fire({
@@ -113,5 +118,4 @@ const Checkout = () => {
         </div>
     )
 }
-
-export default Checkout
+export default Checkout;

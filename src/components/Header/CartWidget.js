@@ -1,17 +1,24 @@
-import React, { useContext } from 'react'
-import carrito from '../img/cartii.svg'
-import '../styles/Cart.css'
-import  {CartContext}  from './CartContext'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react';
+import carrito from '../img/cartii.svg';
+import '../styles/Cart.css';
+import { CartContext } from './CartContext';
+import Cart from './Cart'; // Importa el componente Cart correctamente
 
-export const CartWidget = () => {
+const CartWidget = () => {
+  const { cart } = useContext(CartContext);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const { cart } = useContext(CartContext)
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   return (
-    <Link to='/cart' className='Cart-container' >
+    <div className='CartWidget-container'>
       <span className='Number'>{cart.length}</span>
-      <img className='Cart-img' src={carrito} alt="carrito" />
-    </Link>
-  )
-}
+      <img className='Cart-img' src={carrito} alt="carrito" onClick={toggleCart} />
+      {isCartOpen && <Cart />} {/* Renderiza el componente Cart si isCartOpen es true */}
+    </div>
+  );
+};
+
+export default CartWidget;

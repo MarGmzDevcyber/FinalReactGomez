@@ -1,14 +1,13 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { createRoot } from 'react-dom/client'; 
+import ReactDOM from 'react-dom';
+import  CartProvider  from './components/Header/ProviderCart'; // Importa tu proveedor de contexto
 import App from './App';
-import {CartProvider} from './components/Header/CartContext';
 
-const ds = document.getElementById("root");
-const root = createRoot(ds);
-
-root.render(
+ReactDOM.render(
+  <React.StrictMode>
     <CartProvider>
-          <App />
+      <App />
     </CartProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );

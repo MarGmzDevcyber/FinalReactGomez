@@ -52,7 +52,7 @@
 }
 
 
-.Cart-container {
+.container-carrit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,4 +63,63 @@
 
 .Cart-img{
   width: 40%;
+}
+
+.CartContainer {
+  position: relative;
+  display: inline-block;
+}
+
+
+.CartToggle {
+  cursor: pointer;
+}
+
+
+.CartToggle img {
+  width: 40px;
+  height: 40px;
+}
+
+
+.CartToggle span {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+
+
+.CartContents {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+
+.CartContents .ItemCart {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+.CartContents .CartButtons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.CartContents .CartButtons button,
+.CartContents .CartButtons a {
+  margin-right: 10px;
 }

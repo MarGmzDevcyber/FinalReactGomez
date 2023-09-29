@@ -1,27 +1,26 @@
-import React, { useContext, useState } from 'react'
-import { ItemCount } from './ItemCount'
-import "../styles/ItemDetail.css"
-import { Link } from 'react-router-dom'
-import {CartProvider} from '../Header/CartContext'
+import React, { useContext, useState } from 'react';
+import { ItemCount } from './ItemCount';
+import "../styles/ItemDetail.css";
+import { Link } from 'react-router-dom';
+import { CartContext } from '../Header/CartContext'; 
 
- const ItemDetail = ({ id, image, name, category, description, price, stock }) => {
-    const [quantityAdded, setQuantityAdded] = useState(0)
+const ItemDetail = ({ id, image, name, category, description, price, stock }) => {
+  const [quantityAdded, setQuantityAdded] = useState(0);
 
-    const { addItem } = useContext(CartProvider)
+  const { addItem } = useContext(CartContext);
 
-    const handleOnAdd = (quantity) => {
-        setQuantityAdded(quantity)
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity);
 
-        const Products = {
+    const Products = {
+      id, name, price, image
+    };
 
-            id, name, price, image
-        }
+    addItem(Products, quantity);
+  }
 
-        addItem(Products, quantity)
-    }
-
-    return (
-        <article className='DetailContainer'>
+  return (
+    <article className='DetailContainer'>
             <div className='ImgContainer'>
                 <img src={image} alt={name} className='DetailImg' />
             </div>

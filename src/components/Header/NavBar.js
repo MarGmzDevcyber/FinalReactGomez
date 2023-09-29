@@ -1,6 +1,6 @@
 import React from 'react'
 import brand from "../img/brand.svg"
-import  {CartWidget}  from './CartWidget'
+import  CartWidget  from './CartWidget'
 import { Link, NavLink } from 'react-router-dom'
 import '../styles/NavBar.css'
 
@@ -29,7 +29,7 @@ export const NavBar = () => {
                 </div>
             </div>
 
-            <div className="Cart-container">
+            <div className="container-carrit">
                 <CartWidget />
             </div>
         </nav >
