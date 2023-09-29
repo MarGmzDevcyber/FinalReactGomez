@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import  CartProvider  from './components/Header/ProviderCart'; // Importa tu proveedor de contexto
+import  CartProvider  from './components/Header/ProviderCart'; 
 import App from './App';
 
 ReactDOM.render(

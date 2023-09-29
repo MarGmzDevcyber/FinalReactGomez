@@ -12,7 +12,7 @@ export const CartContext = createContext({
 export function useCart() {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error('useCart debe utilizarse dentro de un proveedor de CartContext');
+    throw new Error('error');
   }
   return context;
 }

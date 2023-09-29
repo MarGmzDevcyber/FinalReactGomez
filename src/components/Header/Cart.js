@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Cart.css';
 
 const Cart = ({ isCartOpen }) => {
-  const { cart, clearCart, totalQuantity } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
 
   return (
     <div className={`CartContainer ${isCartOpen ? 'open' : ''}`}>
