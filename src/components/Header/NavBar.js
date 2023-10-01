@@ -1,37 +1,29 @@
-import React from 'react'
-import brand from "../img/brand.svg"
-import  CartWidget  from './CartWidget'
-import { Link, NavLink } from 'react-router-dom'
-import '../styles/NavBar.css'
+import React from 'react';
+import brand from "../img/brand.svg";
+import CartWidget from './CartWidget';
+import { Link, NavLink } from 'react-router-dom';
+import '../style/navbar.css'; 
 
-export const NavBar = () => {
+const NavBar = () => {
     return (
-
-        <nav className="navbar" >
-
-            <div className="brandcontainer">
-                <Link to='/' className='brand-page'>
-                    <img className='brand-img' src={brand} alt='logo' />
-                </Link>
-            </div>
-            <div className='Categories'>
-                <div className='sub-Category'>
-                    <NavLink to={`/category/monitores`} className="itemList">
-                        Monitores
-                    </NavLink>
-                    <NavLink to={`/category/components`} className="itemList">
-                        Componentes
-                    </NavLink>
-                
-                    <NavLink to={`/category/perifericos`} className="itemList">
-                        Perifericos
-                    </NavLink>
+        <nav className="navbar">
+            <div className="container">
+                <div className="brand">
+                    <Link to='/' >
+                        <img src={brand} alt='logo' />
+                    </Link>
+                </div>
+                <div className='nav-links'>
+                    <NavLink to={`/category/monitores`} className="cat-link">Monitores</NavLink>
+                    <NavLink to={`/category/components`} className="cat-link">Componentes</NavLink>
+                    <NavLink to={`/category/perifericos`}className="cat-link">Periféricos</NavLink>
+                </div>
+                <div className="CartWidget-container">
+                    <CartWidget />
                 </div>
             </div>
+        </nav>
+    );
+};
 
-            <div className="container-carrit">
-                <CartWidget />
-            </div>
-        </nav >
-    )
-}
+export default NavBar;

@@ -1,0 +1,161 @@
+/* Estilos base para pantallas grandes */
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@1;100;300;400;600&display=swap');
+
+.DetailContainer {
+  width: 100%;
+  max-width: 1000px; /* Cambia el ancho máximo para pantallas grandes */
+  height: auto; /* Cambia la altura a automática */
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #78bde6;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.DetailContainer .ImgContainer {
+  width: 50%; /* Cambia el ancho para pantallas grandes */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DetailContainer .DetailImg {
+  max-width: 100%; /* Evita que la imagen desborde el contenedor */
+  height: auto;
+  border-radius: 16px;
+}
+
+.DetailContainer .headerDetail {
+  width: 50%; /* Cambia el ancho para pantallas grandes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px; /* Agrega un espacio entre la imagen y la información */
+}
+
+.DetailContainer .Body-details {
+  font-size: 12;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.DetailContainer .Detail-cat {
+  font-weight: bold;
+  display: flex;
+}
+
+.DetailContainer .Descrip-cont {
+  font-size: large;
+}
+
+.DetailContainer .Price-cont {
+  font-size: larger;
+  font-weight: 1000;
+  color: #000000;
+}
+
+.DetailContainer .ItemDispo {
+  font-size: large;
+  font-weight: 500;
+}
+
+.OptionDetails .Counter {
+  display: flex;
+  color: #000000;
+  align-items: center;
+}
+
+/* Estilos para botones y contador en pantallas grandes */
+@media (min-width: 768px) {
+  .OptionDetails .Buttons,
+  .OptionDetails .Buttons:last-child,
+  .OptionDetails .number {
+    font-size: 20px;
+  }
+}
+
+.OptionDetails .Buttons {
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.OptionDetails .Buttons:hover {
+  background-color: #3f65d8;
+  color: #000000;
+}
+
+.OptionDetails .number {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 5px;
+  margin-bottom: 10px;
+}
+
+.OptionDetails .Buttons:last-child {
+  border-radius: 50%;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.OptionDetails .Buttons:last-child:hover {
+  background-color: #4dbeb7;
+  color: #ffffff;
+}
+
+.OptionDetails .buttonAdd {
+  font-size: 17px;
+  padding:5px;
+  border-radius: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.OptionDetails .buttonAdd:hover {
+  background-color: #4caca5;
+  color: #ffffff;
+}
+.OptionDetails .End-bttn{
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.End-bttn {
+  font-size: 18px;
+  padding-top: 5px;
+  border-radius: 40px;
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 767px) {
+  .DetailContainer {
+    max-width:800px;
+    flex-direction: column; /* Cambia la dirección de flexión para pantallas pequeñas */
+    margin-bottom: 80px; /* Agrega margen inferior para dejar espacio al footer */
+  }
+}

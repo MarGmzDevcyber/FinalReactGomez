@@ -1,0 +1,83 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background-color: lightgrey;
+  }
+  
+
+  .CardContainer {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 20px; 
+  }
+  
+ 
+  h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+    text-align: center;
+    margin: 0; 
+    margin-bottom: 10px; 
+  }
+  
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #4ebacd; 
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    width: 500px;
+  }
+  
+
+  .Form .Label {
+    margin-bottom: 20px;
+  }
+  
+  .Form .Label .Input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .Form .Label .Input:focus {
+    border-color: #2abccc; 
+  }
+  
+
+  .Generator-button {
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    width: 100%;
+    color: #c6f9ff;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+  
+  .Generator-button:hover {
+    background-color: #2abccc; 
+    color: rgb(0, 0, 0);
+  }
+  

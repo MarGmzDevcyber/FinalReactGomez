@@ -1,0 +1,93 @@
+.CardItem {
+        padding: 10px;
+        width: 290px;
+        height:460px;
+        text-align: center;
+        border-radius: 20px;
+        border: 1px solid #015160;
+        background-color: rgb(91, 169, 230);
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.CardItem.HeaderItem{
+    border:solid 1px rgb(0, 0, 0);
+    width:260px;
+    height:250px;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 15px;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.CardItem .HeaderItem .ItemImg{
+        width:95%;
+        padding-top: 3px;
+        background-color: aliceblue;
+        justify-content: center;
+        align-items: center;
+        overflow:hidden;
+}
+
+.CardItem .ItemImg img{
+     transform: scale(0.3);
+     justify-content: center;
+     align-items: center;
+}
+
+.CardItem .title{
+        font-size:20px;
+        font-weight: bold;
+        margin: 5px;
+        text-align: center;
+}
+
+.CardItem .cant{
+        font-size:15px;
+        text-align: center;
+        font-weight: 600;
+}
+
+.CardItem .price{
+        font-size: 18px;
+        font-weight: bolder;
+        margin-top: 10px;
+        text-align: center;
+}
+
+.CardItem .OptionDetails {
+        justify-content: space-evenly; 
+        align-items: center;
+        margin-left: 20px;
+      }
+      
+      .CardItem .OptionDetails button {
+        font-weight: bold;
+        background-color: rgb(158, 215, 255);
+        color: black;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px; 
+      }
+.CardItem .buttonAdd{
+        font-weight: bold;
+        background-color: rgb(158, 215, 255);
+        color: black;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 5px; 
+}
+      
+@media only screen and (max-width: 1400px){
+        .CardItem{
+            width: auto;
+            height: auto;
+        }
+    }

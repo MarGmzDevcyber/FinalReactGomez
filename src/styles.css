@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1;100;700;1000&display=swap');
-*{
+.App{
     margin:0;
     padding:0;
-    font-family: 'Ysabeau SC' ,sans-serif;
-}
-body{
-    background-color: lightgray;
+    font-family: 'Ysabeau Infant' , sans-serif;
+    background-color: lightslategray;
 }

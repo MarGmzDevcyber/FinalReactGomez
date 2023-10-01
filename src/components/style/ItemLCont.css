@@ -1,0 +1,13 @@
+.Container-text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1400px){
+    .Container{
+        width: 100%;
+        display: flex;
+    }
+}

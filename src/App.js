@@ -1,13 +1,13 @@
-import { NavBar } from "./components/Header/NavBar";
+import  NavBar  from "./components/Header/NavBar";
 import  ItemListContainer  from "./components/Header/ItemListContainer";
 import  ItemDetailContainer  from "./components/Body/ItemDetailContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import './styles.css'
-import  Cart  from './components/Header/Cart';
-import Checkout from './components/Body/Checkout';
+import  {Cart}  from './components/Header/Cart';
+import {Checkout} from './components/Body/Checkout';
 import '../src/components/services/firebase/firebaseConfig'
-import  CartProvider  from "./components/Header/ProviderCart";
+import  {CartProvider}  from "./components/Header/ProviderCart";
 
 
 function App() {

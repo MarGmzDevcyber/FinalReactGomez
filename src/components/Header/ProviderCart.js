@@ -1,36 +1,45 @@
-import React, { useState } from 'react';
-import { CartContext } from './CartContext';
+import React, { createContext, useContext, useState } from 'react';
 
- const CartProvider = ({ children }) => {
-  const [Cart, setCart] = useState([]);
 
-  const addItem = (Products, quantity) => {
-    if (!isInCart(Products.id)) {
-      setCart((prev) => [...prev, { ...Products, quantity }]);
+import CartContext from './CartContext';
+
+
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+
+
+  const addItem = (product, quantity) => {
+    if (!isInCart(product.id)) {
+      setCart((prev) => [...prev, { ...product, quantity }]);
     } else {
       console.error('El producto ya fue agregado');
     }
   };
 
-  const removeItem = (ProductsId) => {
-    const cartUpdate = Cart.filter((product) => product.id !== ProductsId);
+
+  const removeItem = (productId) => {
+    const cartUpdate = cart.filter((product) => product.id !== productId);
     setCart(cartUpdate);
   };
+
 
   const clearCart = () => {
     setCart([]);
   };
 
-  const isInCart = (ProductId) => {
-    return Cart.some((prod) => prod.id === ProductId);
+
+  const isInCart = (productId) => {
+    return cart.some((product) => product.id === productId);
   };
 
+
   const total = Number.parseFloat(
-    Cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
+    cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
   ).toFixed(2);
 
-  const contextValue = {
-    Cart,
+
+  const value = {
+    cart,
     addItem,
     removeItem,
     clearCart,
@@ -39,9 +48,8 @@ import { CartContext } from './CartContext';
   };
 
   return (
-    <CartContext.Provider value={contextValue}>
+    <CartContext.Provider value={value}>
       {children}
     </CartContext.Provider>
   );
 };
-export default CartProvider

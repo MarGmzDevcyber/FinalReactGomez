@@ -1,46 +1,52 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/Footer.css'
- import insta from '../img/instagram.png';
- import face from '../img/iconfb.png';
-
+import React, { useEffect } from 'react';
+import insta from '../img/instagram.png';
+import face from '../img/iconfb.png';
+import '../style/footer.css';
 
 const Footer = () => {
-
   const phoneNumber = '+54 0810-666-3177';
   const address = 'Calle Falsa 123 , Argentina';
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.querySelector('.footerCont');
+      if (window.scrollY > 0) {
+        footer.classList.add('show-footer');
+      } else {
+        footer.classList.remove('show-footer');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <footer className="footerCont text-light p-4">
+      <footer className="footerCont">
         <div className="containerFoot">
-          <div className="row">
-            <div className="col-md-6 d-flex justify-content-start">
-              <div>
-                <h4>Contactanos</h4>
-                <p>Teléfono: {phoneNumber}</p>
-                <p>Dirección: {address}</p>
-              </div>
-            </div>
-            <div className="col-md-6 d-flex justify-content-end">
-              <div className='d-flex flex-column'>
-                     <h4>Redes Sociales</h4>
-                <a href="https://www.instagram.com/" className='nav-item' >
-                  <img src={insta}  alt="Instagram" />
-                  <p >Instagram</p>
-                </a>
-                <a href="https://www.facebook.com/" className='nav-item'>
-                  <img src={face}  alt="Facebook" />
-                  <p >Facebook</p>
-                </a> 
-              </div>
-            </div>
+          <div className="contfoot">
+            <h4>Contactanos:</h4>
+            <p>Teléfono: {phoneNumber}</p>
+            <p>Dirección: {address}</p>
+          </div>
+        </div>
+        <div className="contfoot">
+          <div>
+            <a href="https://www.instagram.com/" className='nav-item' >
+              <img src={insta}  alt="Instagram" />
+            </a>
+            <a href="https://www.facebook.com/" className='nav-item'>
+              <img src={face}  alt="Facebook" />
+            </a> 
           </div>
         </div>
       </footer>
-
     </>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

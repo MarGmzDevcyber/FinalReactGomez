@@ -1,25 +1,39 @@
-import React, { useContext } from 'react';
-import { CartContext } from './CartContext';
-import ItemCart from './ItemCart';
-import { Link } from 'react-router-dom';
-import '../styles/Cart.css';
+import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../Header/CartContext'
+import  CartItem  from '../Header/ItemCart'
+import { Link } from 'react-router-dom'
+import '../style/Cart.css'
 
-const Cart = ({ isCartOpen }) => {
-  const { cart, clearCart } = useContext(CartContext);
+export const Cart = () => {
 
-  return (
-    <div className={`CartContainer ${isCartOpen ? 'open' : ''}`}>
-      <div className="CartContents">
-        {cart.map((product) => (
-          <ItemCart key={product.id} {...product} />
-        ))}
-        <div className="CartButtons">
-          <button onClick={() => clearCart()}>Limpiar carrito</button>
-          <Link to="/checkout">Checkout</Link>
+    const { cart, clearCart, totalQuantity} = useContext(CartContext)
+    
+
+    if (totalQuantity === 0) {
+        return (
+            <div>
+                <h1>
+                    No hay productos seleccionados
+                </h1>
+                <Link to='/' className='Option' > Todos los productos</Link>
+            </div>
+        )
+    }
+
+    return (
+        <div className='CartVew'>
+            {cart.map(produc => <CartItem key={produc.id} {...produc} />)}
+            <div className='contenedorBotones'>
+                <div className='LimpiarCarrito'>
+                <button onClick={() => clearCart()} className='CartFooter'>Limpiar carrito</button>
+                </div>
+                <div className='BotonChek'>
+                <Link className='Check' to='/checkout'>Checkout</Link>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-};
+    )
 
-export default Cart;
+}
+

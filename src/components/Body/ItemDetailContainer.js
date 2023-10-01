@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import  ItemDetail  from '../Body/ItemDetail';
 import { useParams } from 'react-router-dom';
-import '../styles/ItemDetailContainer.css';
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../services/firebase/firebaseConfig';
 import { RingLoader } from 'react-spinners'; 
+import '../style/ItemDetContainer.css';
 
 const ItemDetailContainer = () => {
   const [Products, setProducts] = useState(null);

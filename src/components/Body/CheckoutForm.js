@@ -1,49 +1,47 @@
 import React, { useState } from 'react'
-import '../styles/Checkout.css'
+import '../style/Checkout.css'
 
-const CheckoutForm = ({ onConfirm }) => {
-    const [namecheck, setNamecheck] = useState('')
-    const [phone, setPhone] = useState('')
-    const [email, setEmail] = useState('')
+export const CheckoutForm = ({ onConfirm }) => {
+    const [nombre, setNombre] = useState('')
+    const [telefono, setTelefono] = useState('')
+    const [correo, setCorreo] = useState('')
 
-    const handleConfirm = (t) => {
-        t.preventDefault()
+    const handleConfirm = (e) => {
+        e.preventDefault()
 
         const userData = {
-            namecheck, phone, email
+            nombre, telefono, correo
         }
         onConfirm(userData)
     }
     return (
-        <div className='Container'>
+        <div className='Contenedor'>
             <form onSubmit={handleConfirm} className='Form'>
                 <label className='Label'>
-                <h1>Nombre:</h1>
+                    Nombre:
                     <input className='Input'
                         type='text'
-                        value={namecheck}
-                        onChange={({ target }) => setNamecheck(target.value)} />
+                        value={nombre}
+                        onChange={({ target }) => setNombre(target.value)} />
                 </label>
                 <label className='Label'>
-                <h1>Telefono:</h1>
+                    Telefono:
                     <input className='Input'
                         type="text"
-                        value={phone}
-                        onChange={({ target }) => setPhone(target.value)} />
+                        value={telefono}
+                        onChange={({ target }) => setTelefono(target.value)} />
                 </label>
                 <label className='Label'>
-                <h1>Email:</h1>
+                    Correo:
                     <input className='Input'
-                        type="email-cont"
-                        value={email}
-                        onChange={({ target }) => setEmail(target.value)} />
+                        type="email"
+                        value={correo}
+                        onChange={({ target }) => setCorreo(target.value)} />
                 </label>
-            <div className='Generator'>
-                <button type='submit' className='Generator-button'>Crear Pedido</button>
+            <div className='Generador'>
+                <button type='submit' className='BotonGenerador'>Generar Pedido</button>
             </div>
             </form>
         </div>
     )
 }
-
-export default CheckoutForm

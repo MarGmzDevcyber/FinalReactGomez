@@ -1,0 +1,32 @@
+.CartWidget-container{
+    display: flex;
+    align-items:flex-end;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Number{
+    background-color: #2abccc;
+    width: 15px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 13px;
+    color: aliceblue;
+    border: none;
+}
+
+.Cart-img{
+    width: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
